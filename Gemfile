@@ -57,6 +57,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+# GraphQL compatibiliy
+gem 'sprockets', '~> 3.7.2'
+
 # Security Updates
 gem "nokogiri", ">= 1.12.5"
 gem "actionpack", ">= 6.1.4.2"
