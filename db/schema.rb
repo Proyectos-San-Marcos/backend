@@ -134,7 +134,6 @@ ActiveRecord::Schema.define(version: 2021_07_27_200522) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_fb", null: false
     t.string "email", default: "", null: false
     t.string "username", default: "", null: false
     t.string "first_name"
@@ -155,7 +154,6 @@ ActiveRecord::Schema.define(version: 2021_07_27_200522) do
     t.index ["area_id"], name: "index_users_on_area_id"
     t.index ["career_id"], name: "index_users_on_career_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["user_fb"], name: "index_users_on_user_fb", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
