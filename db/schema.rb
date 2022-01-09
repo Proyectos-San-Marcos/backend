@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_27_201239) do
+ActiveRecord::Schema.define(version: 2021_07_27_200522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,8 +134,9 @@ ActiveRecord::Schema.define(version: 2021_07_27_201239) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username", default: "", null: false
+    t.string "user_fb", null: false
     t.string "email", default: "", null: false
+    t.string "username", default: "", null: false
     t.string "first_name"
     t.string "last_name"
     t.integer "phone"
@@ -151,14 +152,10 @@ ActiveRecord::Schema.define(version: 2021_07_27_201239) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.index ["area_id"], name: "index_users_on_area_id"
     t.index ["career_id"], name: "index_users_on_career_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_fb"], name: "index_users_on_user_fb", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

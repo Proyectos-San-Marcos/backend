@@ -19,21 +19,11 @@ gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Devise for users
-gem 'devise'
-
-# Devise JWT Auth
-gem 'devise-jwt', '~> 0.7.0'
-
 # Use JSON Web Tokens
 gem 'jwt'
 
 # Use authorization system
 gem 'pundit'
-
-# Use OAuth
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
 
 # Use GraphQL
 gem 'graphql'

@@ -1,16 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  # :recoverable, :rememberable, :validatable
-
-  devise :database_authenticatable, :registerable,
-         :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
-
   # Validations
-  validates :username, :first_name, :last_name, :email, :password, presence: true
+  validates :username, :first_name, :last_name, :email, presence: true
   validates :username, uniqueness: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, length: { minimum: 7 }
   validates :phone, :dni, :unmsm_code, :cicle, numericality: { only_integer: true }, allow_nil: true
   validates :cicle, inclusion: { in: 1..14, message: 'Should between 0 and 14' }, allow_nil: true
   validate :validate_birthday
