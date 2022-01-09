@@ -1,15 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user, only: %i[show update destroy]
-
-  def current
-    render json: User.find(current_user.id)
-  end
 
   # GET /users
   def index
     @users = policy_scope(User)
-
     render json: @users
   end
 
